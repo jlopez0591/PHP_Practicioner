@@ -14,7 +14,16 @@
     </style>
 </head>
 <body>
-<h1>Task for the Day</h1>
-
+<ul>
+    <?php foreach ($tasks as $task) : ?>
+        <?php if ($task->isComplete()) : ?>
+            <strike>
+                <li><?= $task->description ?></li>
+            </strike>
+        <?php else: ?>
+            <li><?= $task->description ?></li>
+        <?php endif; ?>
+    <?php endforeach;; ?>
+</ul>
 </body>
 </html>
