@@ -14,11 +14,22 @@
     </style>
 </head>
 <body>
-    <ul>
-        <?php foreach($person as $feature => $value) : ?>
-            <li><strong><?= $feature; ?></strong><?= $value; ?></li>
-    <?php endforeach; ?>
-    </ul>
+<h1>Task for the Day</h1>
+<ul>
+
+    <li>
+        <strong>Name: </strong><?= $task['title'] ?>
+    </li>
+    <li>
+        <strong>Due Date: </strong><?= ucwords($task['due']) ?>
+    </li>
+    <li>
+        <strong>Person Responsible: </strong><?= $task['assigned_to'] ?>
+    </li>
+    <li>
+        <strong>Status: </strong><?= $task['completed'] ? 'Complete' : 'Incomplete'  ?>
+    </li>
+</ul>
 </body>
 </body>
 </html>
