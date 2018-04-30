@@ -15,25 +15,10 @@
 </head>
 <body>
     <ul>
-    <?php 
-            foreach($names as $name) : ?>
-                <li><?= $name; ?></li>
+        <?php foreach($person as $feature => $value) : ?>
+            <li><strong><?= $feature; ?></strong><?= $value; ?></li>
     <?php endforeach; ?>
     </ul>
-
-    <ul>
-        <?php 
-            foreach($names as $name){
-                echo "<li>$name</li>";
-            }
-        ?>
-    </ul>
-
-
-    <header>
-    <h1>    
-    </h1>
-    </header>
 </body>
 </body>
 </html>

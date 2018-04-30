@@ -1,15 +1,15 @@
 <?php
 
-$names = [
-    "John Cena", 
-    "Undertaker", 
-    "Randy Orton",
-    "Edge",
-    "CM Punk"
+$person = [
+    'age' => 31,
+    'hair' => "Black",
+    'career' => 'Web Developer'
 ];
 
-foreach ($names as $name) {
-    echo $name;
-}
+$person['name'] = "Jose";
+
+unset($person['age']);
+
+die(var_dump($person));
 
 require 'index.view.php';
