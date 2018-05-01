@@ -4,8 +4,6 @@
 $query = require 'bootstrap.php';
 
 // Almacenamiento del selectAll - Metodo del QueryBuilder
-$tasks = $query->selectAll('todos', 'Task');
-
-die(var_dump($tasks));
+$tasks = $query->selectAll('todos');
 
 require 'index.view.php';

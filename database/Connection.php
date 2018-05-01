@@ -8,11 +8,15 @@
 
 class Connection
 {
-    public static function make()
+    public static function make($config)
     {
-        // Siempre realizar las conexiones a la base de datos detras de un bloque try/catch
         try {
-            return new PDO('mysql:host=127.0.0.1;dbname=mytodo', 'root', 'root');
+            return new PDO(
+                $config['connection'].';dbname='.$config['name'],
+                $config['username'],
+                $config['password'],
+                $config['options']
+            );
         } catch (PDOException $e) {
             die($e->getMessage());
         }

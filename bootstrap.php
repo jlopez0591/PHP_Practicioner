@@ -5,6 +5,8 @@
  * Date: 05/01/18
  * Time: 01:49 AM
  */
+
+$config = require 'config.php';
 require 'database/Connection.php';
 require 'database/QueryBuilder.php';
 
@@ -17,5 +19,5 @@ require 'database/QueryBuilder.php';
 //Retorna una clase que tiene los metodos de consulta pre-armados en la clase QueryBuilder utiliando la conexion
 // establecida en la funcion estatica "make" de Connection
 return new QueryBuilder(
-    Connection::make()
+    Connection::make($config['database'])
 );
