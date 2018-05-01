@@ -4,26 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        header {
-            background: #e3e3e3;
-            padding: 2em;
-            text-align: center;
-        }
-    </style>
+    <title>The PHP Practicioner</title>
 </head>
 <body>
 <ul>
     <?php foreach ($tasks as $task) : ?>
-        <?php if ($task->isComplete()) : ?>
-            <strike>
-                <li><?= $task->description ?></li>
-            </strike>
-        <?php else: ?>
-            <li><?= $task->description ?></li>
-        <?php endif; ?>
-    <?php endforeach;; ?>
+        <li>
+            <?php if ($task->completed) : ?>
+                <strike><?= $task->description ?></strike>
+            <?php else: ?>
+                <?= $task->description; ?>
+            <?php endif; ?>
+        </li>
+    <?php endforeach; ?>
 </ul>
 </body>
 </html>
