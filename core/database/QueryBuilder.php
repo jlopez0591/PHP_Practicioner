@@ -11,10 +11,13 @@ class QueryBuilder
     // La conexion PDO a la base de datos, sea cual sea el tipo
     protected $pdo;
 
+    // Constructor de la clase
     public function __construct(PDO $pdo)
     {
         $this->pdo = $pdo;
     }
+
+    // Consultas generadas.
 
     // Select * from 'table'; Mas que nada...
     public function selectAll($table)
