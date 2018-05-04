@@ -11,7 +11,14 @@ class Request
     // Obtiene la informacion del URI del servidor.
     public static function uri()
     {
-        // Elimina los simbolos / del principio y fin del string.
-        return trim($_SERVER['REQUEST_URI'], '/');
+        // Obtiene el URL y elimina los datos del q GET.
+        return trim(parse_url($_SERVER['REQUEST_URI'],
+            PHP_URL_PATH),
+            '/'
+        );
+    }
+
+    public static function method(){
+        return $_SERVER['REQUEST_METHOD'];
     }
 }

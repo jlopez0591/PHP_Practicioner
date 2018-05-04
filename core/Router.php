@@ -10,9 +10,12 @@ class Router
 {
 
     // Rutas/URLs que tiene disponible el sitio.
-    protected $routes = [];
+    public $routes = [
+        'GET' => [],
+        'POST' => [],
+    ];
 
-    // ?????
+
     public static function load($file)
     {
         $router = new static;
@@ -20,16 +23,20 @@ class Router
         return $router;
     }
 
-    // Define las rutas a utilizar.
-    public function define($routes)
+    public function get($uri, $controller)
     {
-        $this->routes = $routes;
+        $this->routes['GET'][$uri] = $controller;
     }
 
-    public function direct($uri)
+    public function post($uri, $controller)
     {
-        if (array_key_exists($uri, $this->routes)) {
-            return $this->routes[$uri];
+        $this->routes['POST'][$uri] = $controller;
+    }
+
+    public function direct($uri, $requestType)
+    {
+        if (array_key_exists($uri, $this->routes[$requestType])) {
+            return $this->routes[$requestType][$uri];
         }
 
 
