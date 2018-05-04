@@ -6,5 +6,8 @@
  * Time: 04:44 PM
  */
 
-var_dump($_POST);
-$app['database']->insertInto('todos', $_POST['name']);
+$app['database']->insertInto('users',[
+    "name" => $_POST['name'],
+]);
+
+header('Location: /');
