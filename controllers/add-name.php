@@ -6,7 +6,7 @@
  * Time: 04:44 PM
  */
 
-$app['database']->insertInto('users',[
+App::get('database')->insertInto('users',[
     "name" => $_POST['name'],
 ]);
 
