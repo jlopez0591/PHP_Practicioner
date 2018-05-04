@@ -11,3 +11,14 @@ App::bind('config', require 'config.php');
 App::bind('database', new QueryBuilder(
     Connection::make(App::get('config')['database'])
 ));
+
+function view($name, $data = [])
+{
+    extract($data); // Creates variables out of the named elements in array.
+    return require "views/{$name}.view.php";
+}
+
+function redirect($path)
+{
+    header("Lodation: /{$path}");
+}

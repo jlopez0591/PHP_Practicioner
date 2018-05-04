@@ -4,23 +4,25 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitdeeb4f30b853d01b58eb5c4650a9bf96
+class ComposerStaticInit19368303194c19c97b24823fe328aefc
 {
     public static $classMap = array (
         'App' => __DIR__ . '/../..' . '/core/App.php',
-        'ComposerAutoloaderInitdeeb4f30b853d01b58eb5c4650a9bf96' => __DIR__ . '/..' . '/composer/autoload_real.php',
+        'ComposerAutoloaderInit19368303194c19c97b24823fe328aefc' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
-        'Composer\\Autoload\\ComposerStaticInitdeeb4f30b853d01b58eb5c4650a9bf96' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'Composer\\Autoload\\ComposerStaticInit19368303194c19c97b24823fe328aefc' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
+        'PagesController' => __DIR__ . '/../..' . '/controllers/PagesController.php',
         'QueryBuilder' => __DIR__ . '/../..' . '/core/database/QueryBuilder.php',
         'Request' => __DIR__ . '/../..' . '/core/Request.php',
         'Router' => __DIR__ . '/../..' . '/core/Router.php',
+        'UsersController' => __DIR__ . '/../..' . '/controllers/UsersController.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInitdeeb4f30b853d01b58eb5c4650a9bf96::$classMap;
+            $loader->classMap = ComposerStaticInit19368303194c19c97b24823fe328aefc::$classMap;
 
         }, null, ClassLoader::class);
     }
