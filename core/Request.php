@@ -6,6 +6,8 @@
  * Time: 01:15 PM
  */
 
+namespace App\Core;
+
 class Request
 {
     // Obtiene la informacion del URI del servidor.
